@@ -4,9 +4,9 @@
  if(isset($_POST["insert"]))  
  { 
      
-	  $id=$_POST['Car_Name'];
+	  $id=$_POST['wheeler_name'];
       
-      $query ="Update vehicel_details set Pieces_Available = Pieces_Available -1   WHERE id='$id'";
+      $query ="Update wheelers_details set pieces_available = pieces_available -1   WHERE id='$id'";
      if(mysqli_query($connect, $query))  
       {  
           
@@ -20,7 +20,7 @@
  if(isset($_POST["insert"]))  
  {
 
-      $Fast_Name=$_POST['Fast_Name'];
+      $First_Name=$_POST['First_Name'];
       $Last_Name=$_POST['Last_Name'];
 	  $Address=$_POST['Address'];
       $City=$_POST['City'];
@@ -32,7 +32,7 @@
 	  $Rentel_or_Buy=$_POST['Rentel_or_Buy'];
 	  $Price=$_POST['Price'];
 	  
-      $query1 = "INSERT INTO customer (Fast_Name,Last_Name,Address,City,State,Zip,Phone_No,Email,Car_Name,Rentel_or_Buy,Price) VALUES ('$Fast_Name','$Last_Name', '$Address', '$City', '$State', '$Zip', '$Phone_No', '$Email', '$Car_Name', '$Rentel_or_Buy', '$Price')";  
+      $query1 = "INSERT INTO customer (first_Name,last_Name,address,city,state,zip,phone_No,email,wheeler_Name,hireOrbuy,price) VALUES ('$First_Name','$Last_Name', '$Address', '$City', '$State', '$Zip', '$Phone_No', '$Email', '$Car_Name', '$Rentel_or_Buy', '$Price')";  
       if(mysqli_query($connect, $query1))  
       {  
            echo '<script>alert("Your Data Inserted Sucessfully")</script>';  
@@ -103,7 +103,7 @@
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>First Name</label>
-								<input type="text" name="Fast_Name" placeholder="Enter First Name Here.." class="form-control" required>
+								<input type="text" name="First_Name" placeholder="Enter First Name Here.." class="form-control" required>
 							</div>
 							<div class="col-sm-6 form-group">
 								<label>Last Name</label>
@@ -140,13 +140,13 @@
 							
 							<div class="col-sm-6 form-group">
 								<label>2 Wheeler Model Number </label>
-								<select name="Car_Name" class="form-control" required>
+								<select name="wheeler_name" class="form-control" required>
 <?php
 
 $conn = new mysqli('127.0.0.1', 'root', 'root', 'jctechnology') 
 or die ('Cannot connect to db');
 
-    $result = $conn->query("select 	id, Car_Name from vehicel_details");
+    $result = $conn->query("select 	id, wheeler_name from wheelers_details");
 
    
    
@@ -155,8 +155,8 @@ or die ('Cannot connect to db');
 
                   unset($id, $name);
                   $id = $row['id'];
-                  $name = $row['Car_Name']; 
-                 echo "<option value='". $row['id']."'>".$row['Car_Name'].'</option>';
+                  $name = $row['wheeler_name']; 
+                 echo "<option value='". $row['id']."'>".$row['wheeler_name'].'</option>';
 				 
 				  
 
@@ -217,7 +217,7 @@ or die ('Cannot connect to db');
 						<div class="row">
 							<div class="col-sm-6 form-group">
 								<label>First Name</label>
-								<input type="text" name="Fast_Name" placeholder="Enter First Name Here.." class="form-control" required>
+								<input type="text" name="First_Name" placeholder="Enter First Name Here.." class="form-control" required>
 							</div>
 							<div class="col-sm-6 form-group">
 								<label>Last Name</label>
@@ -254,13 +254,13 @@ or die ('Cannot connect to db');
 							
 							<div class="col-sm-4 form-group">
 								<label>2 Wheeler Model Number</label>
-								<select name="Car_Name" class="form-control" required>
+								<select name="wheeler_name" class="form-control" required>
 <?php
 
 $conn = new mysqli('127.0.0.1', 'root', 'root', 'jctechnology') 
 or die ('Cannot connect to db');
 
-    $result = $conn->query("select 	id, Car_Name from vehicel_details");
+    $result = $conn->query("select 	id,wheeler_name from wheelers_details");
 
    
    
@@ -269,7 +269,7 @@ or die ('Cannot connect to db');
 
                   unset($id, $name);
                   $id = $row['id'];
-                  $name = $row['Car_Name']; 
+                  $name = $row['wheeler_name']; 
                  echo "<option value='". $row['id']."'>".$row['Car_Name'].'</option>';
 				 
 				  

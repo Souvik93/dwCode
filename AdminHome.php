@@ -74,7 +74,7 @@
 
 		<div class="row">
 							<div class="col-sm-4 col-sm-4 col-sm-4 ">
-								<h2>Car Lists Table :-</h2>
+								<h2>2 Wheeler Lists :-</h2>
 								<br>
 
 
@@ -82,17 +82,17 @@
 <table class='table table-hover table-inverse'>
   <tr>
 	   <th align="middle"><h4>Id</h4></th>
-	   <th align="middle"><h4>Car image</h4></th>
-    <th align="middle"><h4>Car Type</h4></th>
-    <th align="middle"><h4>Car Name</h4></th>
-	 <th align="middle"><h4>Manufacture Name</h4></th>
+	   <th align="middle"><h4>Image</h4></th>
+    <th align="middle"><h4>Type</h4></th>
+    <th align="middle"><h4>Name</h4></th>
+	 <th align="middle"><h4>Manufacturer Name</h4></th>
 	   <th align="middle"><h4>Model No</h4></th>
     <th align="middle"><h4>Available Purchase</h4></th>
     <th align="middle"><h4>Available Hire</h4></th>
-	<th align="middle"><h4>Pieces Available</h4></th>
+	<th align="middle"><h4> Available</h4></th>
     <th align="middle"><h4>Price Buying</h4></th>
-    <th align="middle"><h4>Price Hireing</h4></th>
-      <th align="middle"><h4>Discription</h4></th>
+    <th align="middle"><h4>Price Renting</h4></th>
+      <th align="middle"><h4>Description</h4></th>
 	  	  
   </tr>
  <?php
@@ -117,7 +117,7 @@ if(!$con)
 	 echo 'DataBase Not Connected';
  }
  
- $sql="SELECT * FROM `vehicel_details`";
+ $sql="SELECT * FROM `wheelers_details`";
  
  $records=mysqli_query($con,$sql);
  
@@ -128,22 +128,22 @@ if(!$con)
 	 echo '  
                             
                                 <th>
-                                    <img src="data:image/jpeg;base64,'.base64_encode($row['Car_image'] ).'" height="20" width="30" class="img-thumnail" />  
+                                    <img src="data:image/jpeg;base64,'.base64_encode($row['wheeler_image'] ).'" height="20" width="30" class="img-thumnail" />  
                                </th>
 
                                						   
                          
                      '; 
-	 echo "<td>".$row['Car_Type']."</td>"; 
-	 echo "<td>".$row['Car_Name']."</td>";
-	 echo "<td>".$row['Manufacture_Name']."</td>"; 
-	 echo "<td>".$row['Model_No']."</td>";
-	 echo "<td>".$row['Available_Purchase']."</td>"; 
-	 echo "<td>".$row['Available_Hire']."</td>";
-	 echo "<td>".$row['Pieces_Available']."</td>"; 
-	 echo "<td>".$row['Price_Buying']."</td>";
-	 echo "<td>".$row['Price_Hireing']."</td>"; 
-	 echo "<td>".$row['Discription']."</td>";
+	 echo "<td>".$row['wheeler_type']."</td>"; 
+	 echo "<td>".$row['wheeler_name']."</td>";
+	 echo "<td>".$row['manufacturer_name']."</td>"; 
+	 echo "<td>".$row['model_no']."</td>";
+	 echo "<td>".$row['available_purchase']."</td>"; 
+	 echo "<td>".$row['available_hire']."</td>";
+	 echo "<td>".$row['pieces_available']."</td>"; 
+	 echo "<td>".$row['price_buying']."</td>";
+	 echo "<td>".$row['price_hiring']."</td>"; 
+	 echo "<td>".$row['description']."</td>";
 	
 	 //session_destroy();
 	 
@@ -173,13 +173,13 @@ else
 </table>
 <br>
 
-<h2>Customer Vehicel Rental/Buy Details</h2>
+<h2>Customer Details</h2>
 								<br>
 
 <table class='table table-bordered'>
   <tr>
 	   <th align="middle"><h4>Id</h4></th>
-    <th align="middle"><h4>Fast Name</h4></th>    
+    <th align="middle"><h4>First Name</h4></th>    
       <th align="middle"><h4>Last Name</h4></th>
 	  <th align="middle"><h4>Address</h4></th>
 	  <th align="middle"><h4>City</h4></th>
@@ -187,9 +187,9 @@ else
       <th align="middle"><h4>Zip</h4></th>
 	  <th align="middle"><h4>Phone No</h4></th>
 	  <th align="middle"><h4>Email</h4></th>
-    <th align="middle"><h4>Car Name</h4></th>    
-      <th align="middle"><h4>Rentel OR Buy</h4></th>
-	  <th align="middle"><h4>Price</h4></th>
+    <th align="middle"><h4>2 Wheeler Name</h4></th>    
+      <th align="middle"><h4>Rent OR Buy</h4></th>
+	  <th align="middle"><h4>Rs</h4></th>
         
   </tr>
  
@@ -223,17 +223,17 @@ if(!$con)
  {
 	 echo "<tr>";
 	 echo "<td>".$row['id']."</td>";
-	 echo "<td>".$row['Fast_Name']."</td>";
-	 echo "<td>".$row['Last_Name']."</td>";
-	 echo "<td>".$row['Address']."</td>";
-	  echo "<td>".$row['City']."</td>";
-	 echo "<td>".$row['State']."</td>";
-	 echo "<td>".$row['Zip']."</td>";
-	 echo "<td>".$row['Phone_No']."</td>";
-	  echo "<td>".$row['Email']."</td>";
-	 echo "<td>".$row['Car_Name']."</td>";
-	 echo "<td>".$row['Rentel_or_Buy']."</td>";
-	 echo "<td>".$row['Price']."</td>";
+	 echo "<td>".$row['first_Name']."</td>";
+	 echo "<td>".$row['last_Name']."</td>";
+	 echo "<td>".$row['address']."</td>";
+	  echo "<td>".$row['city']."</td>";
+	 echo "<td>".$row['state']."</td>";
+	 echo "<td>".$row['zip']."</td>";
+	 echo "<td>".$row['phone_No']."</td>";
+	  echo "<td>".$row['email']."</td>";
+	 echo "<td>".$row['wheeler_Name']."</td>";
+	 echo "<td>".$row['hireOrbuy']."</td>";
+	 echo "<td>".$row['price']."</td>";
 	
  }
  
@@ -254,7 +254,7 @@ else
 </table>
 
 <br>
-								<h2>Contact Us Persons Table :-</h2>
+								<h2>Contact Us Table :-</h2>
 								<br>
 
 <table class='table table-bordered'>
@@ -262,7 +262,7 @@ else
 	   <th align="middle"><h4>Id</h4></th>
     <th align="middle"><h4>Name</h4></th>    
       <th align="middle"><h4>Email</h4></th>
-	  <th align="middle"><h4>Commend</h4></th>
+	  <th align="middle"><h4>Comment</h4></th>
         
   </tr>
  
@@ -298,7 +298,7 @@ if(!$con)
 	 echo "<td>".$row['Id']."</td>";
 	 echo "<td>".$row['Name']."</td>";
 	 echo "<td>".$row['Email']."</td>";
-	 echo "<td>".$row['Commend']."</td>";
+	 echo "<td>".$row['Comment']."</td>";
 	
  }
  

@@ -25,7 +25,7 @@ if(!mysqli_select_db($con,'jctechnology'))
  }
 
 
- $sql1="Update `vehicel_details` set Pieces_Available = Pieces_Available -1   WHERE id='$_GET[id]'";
+ $sql1="Update `wheelers_details` set Pieces_Available = Pieces_Available -1   WHERE id='$_GET[id]'";
  
  
  if(!@mysqli_query($con,$sql1))

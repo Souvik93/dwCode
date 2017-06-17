@@ -14,7 +14,7 @@ $con=mysqli_connect('127.0.0.1','root','root');
 
 if(!$con)
 {
-	echo 'Not Connect to the Server';
+	echo 'Failed';
 }
 
 
@@ -28,11 +28,11 @@ $Name=$_POST['Name'];
  
  $Email=$_POST['Email'];
  
-$Commend=$_POST['Commend'];
+$Comment=$_POST['Comment'];
  
  
  
- $sql="INSERT INTO contact(Name,Email,Commend) VALUES ('$Name','$Email','$Commend')";
+ $sql="INSERT INTO contact(Name,Email,Comment) VALUES ('$Name','$Email','$Comment')";
  
 if(!mysqli_query($con,$sql))
 	 
@@ -41,7 +41,7 @@ if(!mysqli_query($con,$sql))
 	 }
 	 else
 		  {
-		 echo'<h3>Thank You For Contact Us. We Will Back To You Soon...</h3>';
+		 echo'<h3>Thanks. We Will Get Back To You Very Soon...</h3>';
 	 }
 	 
 header("refresh:3 url=index.html");

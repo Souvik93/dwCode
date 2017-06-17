@@ -14,7 +14,7 @@ $con=mysqli_connect('127.0.0.1','root','root');
 
 if(!$con)
 {
-	echo 'Not Connect to the Server';
+	echo 'Failed';
 }
 
  if(!@mysqli_select_db($con,'jctechnology'))
@@ -47,7 +47,7 @@ if(!$con)
 else
 
 {
-   echo 'Enter Currect Username and Password';
+   echo 'Enter Correct Username and Password';
    
    header("refresh:5 url=AdminLogin.html");
 }

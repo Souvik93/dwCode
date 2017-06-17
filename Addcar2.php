@@ -2,19 +2,19 @@
  $connect = mysqli_connect('127.0.0.1','root','root','jctechnology');  
  if(isset($_POST["insert"]))  
  { 
-      $Car_Type=$_POST['Vehicle_Type'];
-      $Car_Name=$_POST['Car_Name'];
-	  $Manufacture_Name=$_POST['Manufacture_Name'];
-      $Model_No=$_POST['Model_No'];
-	  $Available_Purchase=$_POST['Available_Purchase'];
-      $Available_Hire=$_POST['Available_Hire'];
-	  $Pieces_Available=$_POST['Pieces_Available'];
-      $Price_Buying=$_POST['Price_Buying'];
-	  $Price_Hireing=$_POST['Price_Hireing'];
-	  $Discription=$_POST['Discription'];
+      $wheeler_type=$_POST['wheelerType'];
+      $wheeler_name=$_POST['wheelerName'];
+	  $manufacturer_name=$_POST['manufacturerName'];
+      $model_no=$_POST['modelNo'];
+	  $available_purchase=$_POST['purchase'];
+      $available_hire=$_POST['hire'];
+	  $pieces_available=$_POST['noAvailable'];
+      $price_buying=$_POST['priceBuying'];
+	  $price_hiring=$_POST['priceHiring'];
+	  $description=$_POST['description'];
      
-      $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));  
-      $query = "INSERT INTO vehicel_details (Car_image,Car_Type,Car_Name,Manufacture_Name,Model_No,Available_Purchase,Available_Hire,Pieces_Available,Price_Buying,Price_Hireing,Discription) VALUES ('$file','$Car_Type', '$Car_Name', '$Manufacture_Name', '$Model_No', '$Available_Purchase', '$Available_Hire', '$Pieces_Available', '$Price_Buying', '$Price_Hireing', '$Discription')";  
+      $imgURL = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));  
+      $query = "INSERT INTO wheelers_details (wheeler_image,wheeler_type,wheeler_name,manufacturer_name,model_no,available_purchase,available_hire,pieces_available,price_buying,price_hiring,description) VALUES ('$imgURL','$wheeler_type', '$wheeler_name', '$manufacturer_name', '$model_no', '$available_purchase', '$available_hire', '$pieces_available', '$price_buying', '$price_hiring', '$description')";  
       if(mysqli_query($connect, $query))  
       {  
            echo '<script>alert("Your Data Inserted Sucessfully")</script>';  
@@ -43,13 +43,13 @@
            <div class="row">
     <div class="col-md-6 col-sm-12 col-lg-6 col-md-offset-3">
 		<div class="panel panel-primary">
-			<div class="panel-heading" style="color:black;"><center><b> Enter Vehicle Details Here</center>
+			<div class="panel-heading" style="color:black;"><center><b> Enter 2 Wheelers Details Here</center>
 			</div>
 			<div class="panel-body">
 				<form method="post" enctype="multipart/form-data"> 
 				<div class="form-group">
 						<label for="gender">2 Wheeler Type</label>
-						<select name="Vehicle_Type" id="gender" class="form-control">
+						<select name="wheelerType" id="gender" class="form-control">
 							<option selected>Scooty</option>
 							<option>Motorcycle</option>
 							
@@ -59,24 +59,24 @@
 				
 					<div class="form-group">
 						<label for="myName">Vehicle Name *</label>
-						<input id="myName" name="Car_Name" class="form-control" type="text" data-validation="required">
+						<input id="myName" name="wheelerName" class="form-control" type="text" data-validation="required">
 						<span id="error_name" class="text-danger"></span>
 					</div>
 					<div class="form-group">
-						<label for="lastname">Manufacture Name*</label>
-						<input id="lastname" name="Manufacture_Name" class="form-control" type="text" data-validation="required">
+						<label for="lastname">Manufacturer Name*</label>
+						<input id="lastname" name="manufacturerName" class="form-control" type="text" data-validation="required">
 						<span id="error_lastname" class="text-danger"></span>
 					</div>
 					<div class="form-group">
 						<label for="lastname">Model No*</label>
-						<input id="lastname" name="Model_No" class="form-control" type="text" data-validation="required">
+						<input id="lastname" name="modelNo" class="form-control" type="text" data-validation="required">
 						<span id="error_lastname" class="text-danger"></span>
 					</div>
 					
 					
 					<div class="form-group">
 						<label for="gender">Available For Purchase</label>
-						<select name="Available_Purchase" id="gender" class="form-control">
+						<select name="purchase" id="gender" class="form-control">
 							<option selected>Yes</option>
 							<option>No</option>
 							
@@ -85,7 +85,7 @@
 					</div>
 					<div class="form-group">
 						<label for="gender">Available For Hire</label>
-						<select name="Available_Hire" id="gender" class="form-control">
+						<select name="hire" id="gender" class="form-control">
 							<option selected>Yes</option>
 							<option>No</option>
 							
@@ -93,32 +93,32 @@
 						<span id="error_gender" class="text-danger"></span>
 					</div>
 					<div class="form-group">
-						<label for="lastname">NO of Pieces Available for Hire*</label>
-						<input id="lastname" name="Pieces_Available" class="form-control" type="text" data-validation="required">
+						<label for="lastname">No of Wheeler Available for Hire*</label>
+						<input id="lastname" name="noAvailable" class="form-control" type="text" data-validation="required">
 						<span id="error_lastname" class="text-danger"></span>
 					</div>
 					
 					<div class="form-group">
 						<label for="lastname">Price For Buying*</label>
-						<input id="lastname" name="Price_Buying" class="form-control" type="text" data-validation="required">
+						<input id="lastname" name="priceBuying" class="form-control" type="text" data-validation="required">
 						<span id="error_lastname" class="text-danger"></span>
 					</div>
 					
 					<div class="form-group">
-						<label for="lastname">Price For Hireing*</label>
-						<input id="lastname" name="Price_Hireing" class="form-control" type="text" data-validation="required">
+						<label for="lastname">Price For Renting*</label>
+						<input id="lastname" name="priceHiring" class="form-control" type="text" data-validation="required">
 						<span id="error_lastname" class="text-danger"></span>
 					</div>
 					<div class="form-group">
-						<label for="disc">Discription</label>
-						<textarea class="form-control" name="Discription" rows="3"></textarea>
+						<label for="disc">Description</label>
+						<textarea class="form-control" name="description" rows="3"></textarea>
 					</div>
 					<div class="form-group">
-					<label for="disc">Choose 2 Wheeler Image </label>
+					<label for="disc">Choose 2 Wheeler Images </label>
 					<input type="file" name="image" id="image" />  
 					</div>
 					
-			     <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info" />  
+			     <input type="submit" name="insert" id="insert" value="Save" class="btn btn-info" />  
 				</form>
 
 			</div>
@@ -135,7 +135,7 @@
                      <th align="middle"><h4>Details</h4></th>
 	                </tr>
                 <?php  
-                $query = "SELECT * FROM vehicel_details ORDER BY id DESC";  
+                $query = "SELECT * FROM wheelers_details ORDER BY id DESC";  
                 $result = mysqli_query($connect, $query);  
                 while($row = mysqli_fetch_array($result))  
                 {  
@@ -150,8 +150,8 @@
                          
                      '; 
 
-                     echo "<td>".$row['CarName']."</td>"; 
-	                 echo "<td>".$row['CarDetails']."</td>";						 
+                     echo "<td>".$row['Name']."</td>"; 
+	                 echo "<td>".$row['Details']."</td>";						 
                 }  
                 ?>  
                 </table> -->  

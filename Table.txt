@@ -1,0 +1,50 @@
+Table Name - wheelers_details
+
+{
+col-name           type
+
+wheeler_image       blob
+wheeler_type        varchar
+wheeler_name        varchar
+manufacturer_name   varchar
+model_no            varchar
+available_purchase  varchar
+available_hire      varchar
+pieces_available    number
+price_buying        number
+price_hiring        number
+description         number
+Id (P.K.,A.I.)  int(100) 
+}
+
+
+Table Name- customer
+{
+col                  type
+id (P.K.,A.I.)       int(100)
+first_Name           varchar
+last_Name	     varchar
+address
+city
+state
+zip
+phone_No              numbder
+email
+wheeler_Name
+hireOrbuy
+price                 number
+}
+
+
+Table Name- contact
+{
+col-name                         type
+Id (Primary Key,Auto Increment)  int(100) 
+Name	                         varchar(100)
+Email	                         varchar(100)
+Comment                          varchar(100)	
+}
+
+**For the time being login with
+username- admin
+password- admin123
